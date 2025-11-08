@@ -6,6 +6,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGg1HzovZGUDNlOKaO7wYBxqKcpqu37Io&callback=console.debug&libraries=maps,marker">
+    </script>
     <link rel="stylesheet" href="css/widescreen.css">
     <title>Corbett Story Home Page</title>
 </head>
@@ -36,12 +38,26 @@
                 </div>
             </div>
         </div>
-        <div class="map">
-            <div class="map-title">Visit Us</div>
-            <div class="map-directions">
+        <div class="contact">
+            <div class="contact-info">
+                <div class="info-block">
+                    <div class="info-title">The Corbett Wall Art by: <span>Lucky Bear Creations</span></div>
+                    <div class="divider"></div>
+                    <div class="info-descr">We are located at: <span>1124 East Burdick Expy, Minot, ND, 58701</span>. 
+                    We would love for you to visit us in person!</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-title">Contact Us:</div>
+                    <div class="divider"></div>
+                    <div class="info-descr">We would love to hear your feedback on our murals that tell a unique story through vibrant wall art. Available daily by phone or email. Stay tuned for our Facebook page coming soon!</div>
+                </div>
             </div>
-        </div>
+            <div class="contact-map">
+                <div class="map" id="map"></div>
+            </div>
+        </div> 
     </main>
     <footer></footer>
+    <script src="js/script.js"></script>
 </body>
 </html>
