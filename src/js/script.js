@@ -1,26 +1,50 @@
-let map;
+window.addEventListener('DOMContentLoaded', () => {
 
-window.onload = async function initMap() {
-  // The location of Uluru
-  const position = { lat: 48.231686, lng: -101.275500 };
-  // Request needed libraries.
-  //@ts-ignore
-  const { Map } = await google.maps.importLibrary("maps");
-  const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+  let map;
 
-  // The map, centered at Uluru
-  map = new Map(document.getElementById("map"), {
-    zoom: 14,
-    center: position,
-    mapId: "DEMO_MAP_ID",
-  });
+  window.onload = async function initMap() {
+    // The location of Uluru
+    const position = { lat: 48.231686, lng: -101.275500 };
+    // Request needed libraries.
+    //@ts-ignore
+    const { Map } = await google.maps.importLibrary("maps");
+    const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
-  // The marker, positioned at Uluru
-  const marker = new AdvancedMarkerElement({
-    map: map,
-    position: position,
-    title: "Uluru",
-  });
-}
+    // The map, centered at Uluru
+    map = new Map(document.getElementById("map"), {
+      zoom: 14,
+      center: position,
+      mapId: "DEMO_MAP_ID",
+    });
 
-initMap();
+    // The marker, positioned at Uluru
+    const marker = new AdvancedMarkerElement({
+      map: map,
+      position: position,
+      title: "Uluru",
+    });
+  }
+
+  // Home button functionality
+  const mainLogo = document.querySelector('.title');
+
+  mainLogo.addEventListener('click', () => {
+    window.location="index.html"
+  })
+
+  // Hamburger functionality
+
+  if (window.matchMedia("(max-width: 1299px)").matches) {
+    
+    const menu = document.querySelector('.hamburger');
+    const nav = document.querySelector('.nav.mobile');
+
+    menu.addEventListener('click', () => {
+      menu.classList.toggle('active');
+      nav.classList.toggle('active');
+    })
+  }
+
+
+
+});

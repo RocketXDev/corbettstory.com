@@ -48,7 +48,7 @@ header {
     text-shadow: 1px 1px 1px var(--grey-color);
 }
 
-.nav {
+.nav.desktop {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -56,15 +56,15 @@ header {
     gap: 50px;
 }
 
-ul {
+.nav.desktop {
     list-style: none;
 }
 
-.nav > li {
+.nav.desktop > li {
     cursor: pointer;
 }
 
-.nav > li:hover {
+.nav.desktop > li:hover {
     color: var(--hover-brown-color);
     text-shadow: 1px 1px 1px var(--grey-color);
 }
@@ -89,7 +89,7 @@ ul {
     height: auto;
     border: none;
     border-radius: 3px;
-    height: 730px;
+    height: auto;
 }
 
 .promo-text {
@@ -310,3 +310,13 @@ footer {
 }
 
 /* FOOTER */
+
+/* HIDDEN */
+.hamburger {
+    display: none;
+}
+
+.nav.mobile {
+    display: none;
+}
+/* HIDDEN */
