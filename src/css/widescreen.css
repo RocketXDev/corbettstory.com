@@ -60,11 +60,13 @@ header {
     list-style: none;
 }
 
-.nav.desktop > li {
+.nav.desktop > a {
     cursor: pointer;
+    color: var(--grey-color);
+    text-decoration: none;
 }
 
-.nav.desktop > li:hover {
+.nav.desktop > a:hover {
     color: var(--hover-brown-color);
     text-shadow: 1px 1px 1px var(--grey-color);
 }
@@ -73,7 +75,7 @@ header {
 
 /* MAIN */
 
-.promo {
+.promo, .about {
     width: 100%;
     min-height: 100px;
     padding: 40px 50px;
@@ -84,7 +86,7 @@ header {
     gap: 0px;
 }
 
-.promo > img {
+.promo > img, .about > img {
     max-width: 60%;
     height: auto;
     border: none;
@@ -92,7 +94,7 @@ header {
     height: auto;
 }
 
-.promo-text {
+.promo-text, .about-text {
     color: var(--grey-color);
     font-size: 2.0rem;
     max-width: 40%;
@@ -104,13 +106,13 @@ header {
     gap: 20px;
 }
 
-.promo-title, .info-title {
+.promo-title, .info-title, .about-title  {
     font-size: 2.8rem;
     font-weight: 600;
     color: var(--hover-brown-color);
 }
 
-.promo-descr, .info-descr {
+.promo-descr, .info-descr, .about-descr {
     width: 70%;
     font-size: 2.3rem;
 }
@@ -124,7 +126,7 @@ header {
     margin-top: 30px;
 }
 
-.promo-links > a, .links-action > button {
+.promo-links > a, .links-action > button, .about-btn {
     width: 420px;
     height: 60px;
     font-size: 2.3rem;
@@ -142,7 +144,7 @@ header {
     position: relative;
 }
 
-.promo-links > a::before, .links-action > button::before {
+.promo-links > a::before, .links-action > button::before, .about-btn::before {
     content: '';
     position: absolute;
     left: 15px;
@@ -151,7 +153,7 @@ header {
     background-color: var(--black-color);
 }
 
-.promo-links > a::after, .links-action > button::after {
+.promo-links > a::after, .links-action > button::after, .about-btn::after {
     content: '';
     position: absolute;
     right: 15px;
@@ -161,13 +163,13 @@ header {
 }
 
 
-.promo-links > a:hover, .links-action > button:hover {
+.promo-links > a:hover, .links-action > button:hover, .about-btn:hover {
     background-color: var(--brown-color);
     color: var(--grey-color);
     border: 1px solid var(--grey-color);
 }
 
-.promo-links > a:hover::before, .promo-links > a:hover::after, .links-action > button:hover::before, .links-action > button:hover::after {
+.promo-links > a:hover::before, .promo-links > a:hover::after, .links-action > button:hover::before, .links-action > button:hover::after, .about-btn:hover::before, .about-btn:hover::after {
     content: '';
     background-color: var(--grey-color)
 }
@@ -254,6 +256,22 @@ header {
 }
 
 /* MAIN */
+
+/* ABOUT */
+
+.about-descr, .about-btn {
+    margin-top: 20px;
+}
+
+.about-title > span {
+    text-shadow: 1px 1px 1px var(--grey-color);
+}
+
+.about-text > a {
+    text-decoration: none;
+}
+
+/* ABOUT */
 
 /* GENERAL */
 

@@ -127,18 +127,20 @@ header {
     display: none;
 }
 
-.nav.mobile > li {
+.nav.mobile > a {
     cursor: pointer;
     list-style: none;
     font-weight: 500;
     text-transform: uppercase;
+    color: var(--grey-color);
+    text-decoration: none;
 }
 
 /* HEADER */
 
 /* MAIN */
 
-.promo {
+.promo, .about {
     width: 100%;
     min-height: 100px;
     padding: 40px 40px;
@@ -150,11 +152,11 @@ header {
     gap: 30px;
 }
 
-.promo > img {
+.promo > img, .about > img {
     width: 100%;
 }
 
-.promo-text {
+.promo-text, .about-text {
     color: var(--grey-color);
     display: flex;
     flex-direction: column;
@@ -164,13 +166,13 @@ header {
     gap: 10px;
 }
 
-.promo-title, .info-title {
+.promo-title, .info-title, .about-title {
     font-size: 2.1rem;
     font-weight: 600;
     color: var(--hover-brown-color);
 }
 
-.promo-descr, .info-descr {
+.promo-descr, .info-descr, .about-descr {
     font-size: 1.9rem;
     margin-top: 10px;
 }
@@ -184,7 +186,7 @@ header {
     margin-top: 20px;
 }
 
-.promo-links > a, .links-action > button {
+.promo-links > a, .links-action > button, .about-btn {
     width: 350px;
     height: 60px;
     font-size: 1.8rem;
@@ -202,7 +204,7 @@ header {
     position: relative;
 }
 
-.promo-links > a::before, .links-action > button::before {
+.promo-links > a::before, .links-action > button::before, .about-btn::before {
     content: '';
     position: absolute;
     left: 15px;
@@ -211,7 +213,7 @@ header {
     background-color: var(--black-color);
 }
 
-.promo-links > a::after, .links-action > button::after {
+.promo-links > a::after, .links-action > button::after, .about-btn::after {
     content: '';
     position: absolute;
     right: 15px;
@@ -305,6 +307,22 @@ header {
 }
 
 /* MAIN */
+
+/* ABOUT */
+
+.about-descr, .about-btn {
+    margin-top: 10px;
+}
+
+.about-title > span {
+    text-shadow: 1px 1px 1px var(--grey-color);
+}
+
+.about-text > a {
+    text-decoration: none;
+}
+
+/* ABOUT */
 
 /* GENERAL */
 
