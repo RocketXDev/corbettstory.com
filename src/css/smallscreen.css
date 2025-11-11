@@ -39,7 +39,7 @@ header {
     position: fixed;
     width: 100%;
     height: 90px;
-    z-index: 10;
+    z-index: 30;
     background-color: var(--black-color);
 }
 
@@ -166,15 +166,16 @@ header {
     gap: 10px;
 }
 
-.promo-title, .info-title, .about-title {
+.promo-title, .info-title, .about-title, .wall-title {
     font-size: 2.1rem;
     font-weight: 600;
     color: var(--hover-brown-color);
 }
 
-.promo-descr, .info-descr, .about-descr {
+.promo-descr, .info-descr, .about-descr, .wall-descr {
     font-size: 1.9rem;
     margin-top: 10px;
+    color: var(--grey-color);
 }
 
 .promo-links {
@@ -323,6 +324,74 @@ header {
 }
 
 /* ABOUT */
+
+/* WALL */
+
+.wall-wrapper {
+    padding: 30px 40px 60px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-direction: column;
+    border-bottom: 1px solid var(--grey-color);
+}
+
+.wall-block {
+    display: block;
+    min-width: 250px;
+    height: auto;
+    position: relative;
+    cursor: pointer;
+}
+
+.wall-block::before {
+    content: '';
+    display: block;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--grey-color);
+}
+
+.wall-block > img {
+    width: 100%;
+    height: 100%;
+}
+
+.wall-name {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--grey-color);
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    z-index: 15;
+    text-align: center;
+}
+
+.wall-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+    padding-top: 50px;
+}
+.wall-title, .wall-descr {
+    padding: 0px 40px;
+    text-align: center;
+}
+
+/* WALL */
 
 /* GENERAL */
 

@@ -106,15 +106,16 @@ header {
     gap: 20px;
 }
 
-.promo-title, .info-title, .about-title  {
+.promo-title, .info-title, .about-title, .wall-title  {
     font-size: 2.8rem;
     font-weight: 600;
     color: var(--hover-brown-color);
 }
 
-.promo-descr, .info-descr, .about-descr {
+.promo-descr, .info-descr, .about-descr, .wall-descr {
     width: 70%;
     font-size: 2.3rem;
+    color: var(--grey-color);
 }
 
 .promo-links {
@@ -272,6 +273,83 @@ header {
 }
 
 /* ABOUT */
+
+/* WALL */
+
+.wall-wrapper {
+    padding: 50px 70px 70px 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--grey-color);
+}
+
+.wall-block {
+    display: block;
+    width: 600px;
+    height: 400px;
+    position: relative;
+    cursor: pointer;
+}
+
+.wall-block::before {
+    content: '';
+    display: block;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 10;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.wall-block > img {
+    width: 100%;
+    height: 100%;
+}
+
+.wall-name {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--grey-color);
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    z-index: 15;
+    text-align: center;
+}
+
+.wall-block:hover {
+    box-shadow: 5px 5px 15px var(--grey-color);
+}
+
+.wall-block:hover::before {
+    background-color: rgba(0, 0, 0, 0.75);
+    border: 1px solid var(--hover-brown-color);
+}
+
+.wall-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    padding-top: 50px;
+}
+.wall-title, .wall-descr {
+    width: 60%;
+    text-align: center;
+}
+
+/* WALL */
 
 /* GENERAL */
 
