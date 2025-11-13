@@ -106,7 +106,7 @@ header {
     gap: 20px;
 }
 
-.promo-title, .info-title, .about-title, .wall-title  {
+.promo-title, .info-title, .about-title, .wall-title, .ad-title, .process-title  {
     font-size: 2.8rem;
     font-weight: 600;
     color: var(--hover-brown-color);
@@ -350,6 +350,116 @@ header {
 }
 
 /* WALL */
+
+/* Individual pages with ads in them */
+
+.main-title {
+    color: var(--hover-brown-color);
+    font-size: 5.0rem;
+    font-weight: 700;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    margin-top: 40px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px var(--grey-color);
+    border: 1px solid var(--hover-brown-color);
+    padding: 10px;
+    min-width: 400px;
+    width: 77%;
+}
+
+.advertisment-section, .process-section {
+    width: 100%;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px;
+    border-bottom: 1px solid var(--grey-color);
+}
+
+.advertisment-section {
+    padding: 25px 40px 40px 40px;
+}
+
+.ad-title, .process-title {
+    font-size: 3.0rem;
+}
+
+.ad-wrapper {
+    width: 80%;
+    border: 1px solid var(--grey-color);
+    height: 400px;
+    margin-top: 15px;
+    background-color: rgba(255,255,255,0.3);
+    position: relative;
+}
+
+.ad-wrapper-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--black-color);
+    font-size: 3.5rem;
+}
+
+.process-wrapper {
+    width: 80%;
+    height: 600px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 10px;
+}
+
+.carousel {
+    display: flex;
+    gap: 0;  
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none; 
+}
+
+.carousel img {
+  width: 100%;
+  height: 600px;  
+  flex: 0 0 100%;
+  object-fit: contain;
+  scroll-snap-align: start;
+}
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  width: 100px;
+  height: 100px;
+  transform: translateY(-50%);
+  z-index: 5;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  font-size: 6.5rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s ease;
+}
+
+.prev {
+  left: 30px;
+}
+
+.next {
+  right: 30px;
+}
+
+/* Individual pages with ads in them */
 
 /* GENERAL */
 
