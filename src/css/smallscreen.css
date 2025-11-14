@@ -166,7 +166,7 @@ header {
     gap: 10px;
 }
 
-.promo-title, .info-title, .about-title, .wall-title {
+.promo-title, .info-title, .about-title, .wall-title, .ad-title, .process-title {
     font-size: 2.1rem;
     font-weight: 600;
     color: var(--hover-brown-color);
@@ -392,6 +392,114 @@ header {
 }
 
 /* WALL */
+
+/* Individual pages with ads in them */
+.wall-segment {
+    padding: 30px 0px 0px 0px;
+}
+
+.main-title {
+    color: var(--hover-brown-color);
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    text-transform: uppercase;
+    text-shadow: 1px 1px var(--grey-color);
+    border: 1px solid var(--hover-brown-color);
+    padding: 10px;
+    min-width: 320px;
+    width: 77%;
+}
+
+.advertisment-section, .process-section {
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    border-bottom: 1px solid var(--grey-color);
+}
+
+.advertisment-section, .process-section {
+    padding: 25px 25px 40px 25px;
+}
+
+.ad-wrapper {
+    width: 100%;
+    border: 1px solid var(--grey-color);
+    height: 300px;
+    margin-top: 10px;
+    background-color: rgba(255,255,255,0.3);
+    position: relative;
+}
+
+.ad-wrapper-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    color: var(--grey-color);
+    font-size: 2.8rem;
+}
+
+.process-wrapper {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 10px;
+}
+
+.carousel {
+    display: flex;
+    gap: 0;  
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none; 
+}
+
+.carousel img {
+  width: 100%;
+  height: 400px;  
+  flex: 0 0 100%;
+  object-fit: contain;
+  scroll-snap-align: start;
+}
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  transform: translateY(-50%);
+  z-index: 5;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  font-size: 5.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.prev {
+  left: 5px;
+}
+
+.next {
+  right: 5px;
+}
+
+/* Individual pages with ads in them */
 
 /* GENERAL */
 

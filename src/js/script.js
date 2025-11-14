@@ -51,55 +51,54 @@ window.addEventListener('DOMContentLoaded', () => {
     })
   }
 
-  if (window.matchMedia("(min-width: 1300px)").matches) {
-    const wrapper = document.querySelector('.process-wrapper');
-    const carousel = wrapper.querySelector('.carousel');
-    const btnPrev = wrapper.querySelector('.prev');
-    const btnNext = wrapper.querySelector('.next');
+  // Carousel functionality
+  const wrapper = document.querySelector('.process-wrapper');
+  const carousel = wrapper.querySelector('.carousel');
+  const btnPrev = wrapper.querySelector('.prev');
+  const btnNext = wrapper.querySelector('.next');
 
-    // Scroll one image left/right
-    function scrollNext() {
-      // If at the end → go back to start
-      if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 5) {
-        carousel.scrollTo({ left: 0, behavior: 'smooth' });
-      } else {
-        carousel.scrollBy({ left: carousel.clientWidth, behavior: 'smooth' });
-      }
+  // Scroll one image left/right
+  function scrollNext() {
+    // If at the end → go back to start
+    if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 5) {
+      carousel.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+      carousel.scrollBy({ left: carousel.clientWidth, behavior: 'smooth' });
     }
-
-    function scrollPrev() {
-      // If at the start → go to the end
-      if (carousel.scrollLeft <= 5) {
-        carousel.scrollTo({ left: carousel.scrollWidth, behavior: 'smooth' });
-      } else {
-        carousel.scrollBy({ left: -carousel.clientWidth, behavior: 'smooth' });
-      }
-    }
-
-    btnPrev.addEventListener('click', scrollPrev);
-    btnNext.addEventListener('click', scrollNext);
-
-    // ----- AUTO SCROLL -----
-    let autoScrollDelay = 6000; // 4 seconds
-    let autoScroll;
-
-    function startAutoScroll() {
-      autoScroll = setInterval(scrollNext, autoScrollDelay);
-    }
-
-    function stopAutoScroll() {
-      clearInterval(autoScroll);
-    }
-
-    // Start on load
-    startAutoScroll();
-
-    // Pause autoscroll when user interacts
-    carousel.addEventListener('mouseenter', stopAutoScroll);
-    carousel.addEventListener('mouseleave', startAutoScroll);
-    carousel.addEventListener('touchstart', stopAutoScroll);
-    carousel.addEventListener('touchend', startAutoScroll);
   }
+
+  function scrollPrev() {
+    // If at the start → go to the end
+    if (carousel.scrollLeft <= 5) {
+      carousel.scrollTo({ left: carousel.scrollWidth, behavior: 'smooth' });
+    } else {
+      carousel.scrollBy({ left: -carousel.clientWidth, behavior: 'smooth' });
+    }
+  }
+
+  btnPrev.addEventListener('click', scrollPrev);
+  btnNext.addEventListener('click', scrollNext);
+
+  // ----- AUTO SCROLL -----
+  let autoScrollDelay = 6000; // 4 seconds
+  let autoScroll;
+
+  function startAutoScroll() {
+    autoScroll = setInterval(scrollNext, autoScrollDelay);
+  }
+
+  function stopAutoScroll() {
+    clearInterval(autoScroll);
+  }
+
+  // Start on load
+  startAutoScroll();
+
+  // Pause autoscroll when user interacts
+  carousel.addEventListener('mouseenter', stopAutoScroll);
+  carousel.addEventListener('mouseleave', startAutoScroll);
+  carousel.addEventListener('touchstart', stopAutoScroll);
+  carousel.addEventListener('touchend', startAutoScroll);
 
 
 
