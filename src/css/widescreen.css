@@ -573,6 +573,7 @@ header {
     background-color: var(--hover-brown-color);
     outline: none;
     border: 1px solid var(--grey-color);
+    color: var(--black-color);
 }
 
 .modal-btns > button:first-child:hover {
