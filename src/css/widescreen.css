@@ -16,6 +16,15 @@ html, body {
     font-size: 0.625rem;
     background-color: black;
 }
+body.overlay::before {
+    content: "";
+    position: fixed;
+    inset: 0;    
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 900;          
+    pointer-events: auto; 
+}
+
 
 /* HEADER */
 
@@ -106,13 +115,13 @@ header {
     gap: 20px;
 }
 
-.promo-title, .info-title, .about-title, .wall-title, .ad-title, .process-title  {
+.promo-title, .info-title, .about-title, .wall-title, .ad-title, .process-title, .privacy-title  {
     font-size: 2.8rem;
     font-weight: 600;
     color: var(--hover-brown-color);
 }
 
-.promo-descr, .info-descr, .about-descr, .wall-descr {
+.promo-descr, .info-descr, .about-descr, .wall-descr, .privacy-descr {
     width: 70%;
     font-size: 2.3rem;
     color: var(--grey-color);
@@ -184,7 +193,6 @@ header {
     padding: 40px 70px;
     color: var(--grey-color);
     font-size: 2.5rem;
-    border-bottom: 1px var(--grey-color) solid;
 }
 
 .contact-info {
@@ -284,7 +292,6 @@ header {
     gap: 100px;
     flex-direction: row;
     flex-wrap: wrap;
-    border-bottom: 1px solid var(--grey-color);
 }
 
 .wall-block {
@@ -471,6 +478,175 @@ header {
 
 /* GENERAL */
 
+/* MODAL WINDOW */
+
+.modal-window.request {
+    display: none;
+}
+
+.modal-window.request.active {
+    position: fixed;
+    background-color: var(--black-color);
+    width: 50%;
+    min-height: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    border: 1px solid var(--grey-color);
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    z-index: 999;
+}
+
+.modal-title {
+    font-size: 3.5rem;
+    color: var(--hover-brown-color);
+    text-align: center;
+    font-weight: 700;
+}
+
+.modal-descr {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.modal-descr > input, .modal-descr > textarea {
+    width: 350px;
+    height: 60px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 2.0rem;
+    border-radius: 3px;
+}
+
+.modal-descr > input::active {
+    box-shadow: 3px 3px 5px var(--black-color);
+}
+
+.modal-descr > input::placeholder, .modal-descr > textarea::placeholder {
+    font-size: 2.1rem;
+    text-transform: uppercase;
+}
+
+.modal-descr > textarea {
+    min-height: 150px;
+    flex-wrap: wrap;
+    text-wrap: wrap;
+    min-height: 100px;
+    max-height: 300px;  
+    resize: none;      
+    overflow: scroll; 
+}
+
+.modal-policy > a {
+    color: var(--grey-color);
+    text-decoration: underline;
+    font-size: 2.1rem;
+}
+
+.modal-btns {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.modal-btns > button {
+    width: 170px;
+    height: 40px;
+    font-size: 2.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.modal-btns > button:first-child {
+    background-color: var(--hover-brown-color);
+    outline: none;
+    border: 1px solid var(--grey-color);
+}
+
+.modal-btns > button:first-child:hover {
+    background-color: var(--brown-color);
+    color: var(--grey-color);
+}
+
+.modal-btns > button:last-child {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: var(--hover-brown-color);
+}
+
+.modal-btns > button:last-child:hover {
+    text-decoration: underline;
+}
+
+/* MODAL WINDOW */
+
+/* PRIVACY POLICY */
+
+.privacy-wrapper {
+    padding: 50px 150px;
+}
+
+.privacy-title, .privacy-descr {
+    width: 100%;
+}
+
+.privacy-title.main {
+    margin-top: 0px;
+    font-size: 3.4rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.privacy-date.main {
+    color: var(--grey-color);
+    font-size: 2.3rem;
+    margin-top: 5px;
+}
+
+.privacy-date.main > span {
+    font-weight: 600;
+}
+
+.privacy-descr.main {
+    margin-top: 20px;
+}
+
+.privacy-descr > a {
+    color: var(--grey-color);
+}
+
+.privacy-descr > span {
+    font-weight: 600;
+}
+
+.privacy-title {
+    margin-top: 50px;
+}
+
+.privacy-wrapper > .divider {
+    margin-top: 10px;
+    width: 500px;
+}
+
+.privacy-descr {
+    margin-top: 30px;
+}
+
+/* PRIVACY POLICY */
+
 /* FOOTER */
 
 footer {
@@ -482,6 +658,7 @@ footer {
     display: flex;
     justify-content:center;
     align-items: center;
+    border-top: 1px solid var(--grey-color);
 }
 
 .footer-wrapper {
